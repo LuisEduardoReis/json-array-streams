@@ -11,6 +11,8 @@ function createParseStream() {
 			parser.onValue = function (value) {
 				if (this.stack.length === 1) {
 					self.push(value);
+					this.key--
+					this.value.pop()
 				}
 			};
 			parser.write(chunk);
